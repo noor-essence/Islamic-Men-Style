@@ -5,104 +5,156 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Islamic Mens Wear</title>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --gold: #c8a96a;
+      --dark: #0e0e0e;
+      --green: #0f3d2e;
+      --light: #f5f5f5;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
     }
 
     body {
-      background: #0d0d0d;
-      color: white;
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--light);
     }
 
     header {
       display: flex;
       justify-content: space-between;
-      padding: 20px 50px;
-      background: black;
       align-items: center;
+      padding: 20px 60px;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
     }
 
     header h1 {
-      color: gold;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
       letter-spacing: 2px;
     }
 
     nav a {
-      color: white;
-      margin-left: 20px;
+      margin-left: 25px;
       text-decoration: none;
+      color: #ccc;
       font-size: 14px;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: gold;
+      color: var(--gold);
     }
 
     .hero {
-      height: 90vh;
-      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322') center/cover;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+        url('https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf') center/cover;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 0 20px;
     }
 
     .hero h2 {
-      font-size: 50px;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      background: var(--gold);
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e0c285;
     }
 
     .section {
-      padding: 60px 50px;
+      padding: 100px 60px;
       text-align: center;
     }
 
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
     .products {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      flex-wrap: wrap;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .card {
       background: #1a1a1a;
-      padding: 20px;
-      width: 250px;
-      border-radius: 10px;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card img {
       width: 100%;
-      border-radius: 10px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
     }
 
     .card h3 {
-      margin: 15px 0;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: gold;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
     }
 
     footer {
-      padding: 20px;
+      padding: 40px;
       text-align: center;
       background: black;
-      margin-top: 50px;
-      font-size: 14px;
+      color: #777;
+    }
+
+    @media(max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
     }
   </style>
 </head>
@@ -113,45 +165,52 @@
   <h1>Islamic Mens Wear</h1>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
+    <a href="#">Collection</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>Modesty meets Style</h2>
+  <h2>Refined Modesty</h2>
+  <p>Timeless Islamic fashion combining tradition with modern elegance.</p>
+  <a href="#" class="btn">Explore Collection</a>
 </section>
 
 <section class="section">
-  <h2>Unsere Produkte</h2>
+  <h2>Featured Collection</h2>
 
   <div class="products">
+
     <div class="card">
       <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-      <h3>Premium Thobe</h3>
-      <p>Eleganter islamischer Stil</p>
-      <a href="#" class="btn">Jetzt kaufen</a>
+      <div class="card-content">
+        <h3>Classic Thobe</h3>
+        <p>Elegant & minimal</p>
+      </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-      <h3>Streetwear Hoodie</h3>
-      <p>Modern & modest</p>
-      <a href="#" class="btn">Jetzt kaufen</a>
+      <div class="card-content">
+        <h3>Modern Hoodie</h3>
+        <p>Streetwear meets modesty</p>
+      </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
-      <h3>Klassischer Jubba</h3>
-      <p>Tradition trifft Style</p>
-      <a href="#" class="btn">Jetzt kaufen</a>
+      <div class="card-content">
+        <h3>Premium Jubba</h3>
+        <p>Luxury Islamic wear</p>
+      </div>
     </div>
+
   </div>
 </section>
 
 <footer>
-  © 2026 Islamic Mens Wear – All rights reserved
+  © 2026 Islamic Mens Wear — Designed with purpose
 </footer>
 
 </body>
